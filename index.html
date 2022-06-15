@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Movie Seat Booking</title>
+  </head>
+  <body>
+    <div id="movie-container">
+      <div id="options">
+        <select name="tickets-type" id="tickets-type">
+          <option value="" disabled selected hidden> Choose Seat Type...</option>
+          <option value="premium">Premium</option>
+          <option value="standard">Standard</option>
+        </select>
+        <select name="seatNum" id="seatnum1">
+          <option value="" disabled selected hidden>
+            Quantity...
+          </option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </div>
+    </div>
+    
+    <ul id="showcase">
+      <li>
+        <div class="seat"></div>
+        <small>Unavailable</small>
+      </li>
+
+      <li>
+        <div class="seat selected"></div>
+        <small>Selected</small>
+      </li>
+
+      <li>
+        <div class="seat occupied"></div>
+        <small>Occupied</small>
+      </li>
+    </ul>
+
+    <div id="container">
+      <div id="screen"></div>
+
+      <small id="standardmovieseats">Standard Seats</small>
+      <br/>
+      <div class="row">
+        <div class="seat standardseats r1"></div>
+        <div class="seat standardseats r1"></div>
+        <div class="seat standardseats r1"></div>
+        <div class="seat standardseats r1"></div>
+        <div class="seat standardseats r1"></div>
+        <div class="seat standardseats r1"></div>
+        <div class="seat standardseats r1"></div>
+        <div class="seat standardseats r1"></div>
+      </div>
+
+      <div class="row">
+        <div class="seat standardseats r2"></div>
+        <div class="seat standardseats r2"></div>
+        <div class="seat standardseats r2"></div>
+        <div class="seat standardseats r2"></div>
+        <div class="seat standardseats r2"></div>
+        <div class="seat standardseats r2"></div>
+        <div class="seat standardseats r2"></div>
+        <div class="seat standardseats r2"></div>
+      </div>
+
+      <div class="row">
+        <div class="seat standardseats r3"></div>
+        <div class="seat standardseats r3"></div>
+        <div class="seat standardseats r3"></div>
+        <div class="seat standardseats r3"></div>
+        <div class="seat standardseats r3"></div>
+        <div class="seat standardseats r3"></div>
+        <div class="seat standardseats r3"></div>
+        <div class="seat standardseats r3"></div>
+      </div>
+
+      <div class="row">
+        <div class="seat standardseats r4"></div>
+        <div class="seat standardseats r4"></div>
+        <div class="seat standardseats r4"></div>
+        <div class="seat standardseats r4"></div>
+        <div class="seat standardseats r4"></div>
+        <div class="seat standardseats r4"></div>
+        <div class="seat standardseats r4"></div>
+        <div class="seat standardseats r4"></div>
+      </div>
+
+      <small id="premiummovieseats">Premium Seats</small>
+
+      <div class="row">
+        <div class="seat premiumseats r5"></div>
+        <div class="seat premiumseats r5"></div>
+        <div class="seat premiumseats r5"></div>
+        <div class="seat premiumseats r5"></div>
+        <div class="seat premiumseats r5"></div>
+        <div class="seat premiumseats r5"></div>
+        <div class="seat premiumseats r5"></div>
+        <div class="seat premiumseats r5"></div>
+      </div>
+
+      <div class="row">
+        <div class="seat premiumseats r6"></div>
+        <div class="seat premiumseats r6"></div>
+        <div class="seat premiumseats r6"></div>
+        <div class="seat premiumseats r6"></div>
+        <div class="seat premiumseats r6"></div>
+        <div class="seat premiumseats r6"></div>
+        <div class="seat premiumseats r6"></div>
+        <div class="seat premiumseats r6"></div>
+      </div>
+
+      <div class="row">
+        <div class="seat premiumseats r7"></div>
+        <div class="seat premiumseats r7"></div>
+        <div class="seat premiumseats r7"></div>
+        <div class="seat premiumseats r7"></div>
+        <div class="seat premiumseats r7"></div>
+        <div class="seat premiumseats r7"></div>
+        <div class="seat premiumseats r7"></div>
+        <div class="seat premiumseats r7"></div>
+      </div>
+      
+    </div>
+
+    <button id="proceedbutton"> Proceed </button>
+    <script src="script.js"></script>
+  </body>
+</html>
+<!--  -->
