@@ -17,15 +17,13 @@ let standardSeatsRow4 = Array.from(document.querySelectorAll('.r4:not(.occupied)
 let premiumSeatsRow1 = Array.from(document.querySelectorAll('.r5:not(.occupied)'));
 let premiumSeatsRow2 = Array.from(document.querySelectorAll('.r6:not(.occupied)'));
 let premiumSeatsRow3 = Array.from(document.querySelectorAll('.r7:not(.occupied)'));
-
+debugger;
 let seatsSelectedQuantity;
+let seatType;
 
-//Populating the UI From LocalStorage.
+//Populating the UserInter Face From LocalStorage.
 
 populateUI();
-
-
-// addEventListener needed for this.
 
 
 inputSeatNumber.addEventListener('change', seatQuantity)
@@ -34,34 +32,32 @@ seatsSelectedQuantity = parseInt(e.target.value)
 }
 
     ticketType.addEventListener('change', (e) => {
-        const seatType = e.target.value;
+         seatType = e.target.value;
         if(seatType == 'premium' && seatsSelectedQuantity != 0){
 
             function seatType(rowSeatsType){
                 rowSeatsType.map((r,ind) =>{
                     r.addEventListener('click', (e)=>{
                         rowSeatsType.map((item,index)=>{
-                            if(seatsSelectedQuantity>0 && !rowSeatsType[ind].classList.contains("selected")){
+                            if(seatsSelectedQuantity>0 || seatType == 'premium' && !rowSeatsType[ind].classList.contains("selected")){
                                 console.log('isClass',rowSeatsType[ind].classList.contains("selected"))
                                 rowSeatsType[ind].classList.toggle("selected");
-                            seatsSelectedQuantity--;
-                            ind++;
-                            updateSelectCount();
+                                seatsSelectedQuantity--;
+                                ind++;
                             }
                         })
                     })
             
                 })
             } 
-
             seatType(premiumSeatsRow1);
             seatType(premiumSeatsRow2);
             seatType(premiumSeatsRow3);
 
-            proceedButton.addEventListener('click', proceedButtonFunction)
-            function proceedButtonFunction(){
+            proceedButton.addEventListener('click', () => {
+                updateSelectCount();
                 alert('Movie Tickets have been Successfully Booked.');
-            }
+            })
         }
 
         else if(seatType == 'standard' && seatsSelectedQuantity != 0) {
@@ -70,11 +66,10 @@ seatsSelectedQuantity = parseInt(e.target.value)
                 rowSeatsType.map((r,ind) =>{
                     r.addEventListener('click', (e)=>{
                         rowSeatsType.map((item,index)=>{
-                            if(seatsSelectedQuantity>0 && !rowSeatsType[ind].classList.contains("selected")){
+                            if(seatsSelectedQuantity>0 || seatType == 'standard' && !rowSeatsType[ind].classList.contains("selected")){
                                 rowSeatsType[ind].classList.toggle("selected");
                             seatsSelectedQuantity--;
                             ind++;
-                            updateSelectCount();
                             }
                         })
                     })
@@ -87,11 +82,12 @@ seatsSelectedQuantity = parseInt(e.target.value)
             seatType(standardSeatsRow3);
             seatType(standardSeatsRow4);
 
-            proceedButton.addEventListener('click', proceedButtonFunction)
-            function proceedButtonFunction(){
+            proceedButton.addEventListener('click', () => {
+                updateSelectCount();
                 alert('Movie Tickets have been Successfully Booked.');
-            }
+            })
         }
+       
     })
     
     //LocalStorage  

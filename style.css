@@ -46,6 +46,8 @@ body {
   margin: 3px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  margin-right: 30px;
+
 }
 
 .seat.selected {
@@ -56,9 +58,9 @@ body {
   background-color: #fff;
 }
 
-.seat:nth-last-of-type(3) {
+/* .seat:nth-last-of-type(3) {
   margin-left: 18px;
-}
+} */
 
 .seat:not(.occupied):hover {
   cursor: pointer;
